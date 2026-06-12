@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutomatePro | Portfolio Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0b162c; font-family: 'Inter', sans-serif; overflow: hidden; }
+        
+        .magazine-container {
+            perspective: 2000px;
+            width: 100%;
+            max-width: 600px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: left;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .page.flipped {
+            transform: rotateY(-180deg);
+        }
+
+        .btn-nav {
+            background: #eab308;
+            color: #0b162c;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-nav:hover { background: #d97706; }
+        .btn-nav:disabled { background: #475569; color: #94a3b8; cursor: not-allowed; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+
+    <header class="w-full max-w-4xl flex justify-between items-center mb-6 text-white px-4">
+        <a href="https://automation.techgrid-systems.org.uk/portfolio" class="text-slate-400 hover:text-white transition">← Back to Portfolio</a>
+        <h1 class="text-lg font-bold tracking-widest uppercase">AutomatePro Showcase</h1>
+    </header>
+
+    <div class="magazine-container" id="magazine">
+        <!-- Page 5 (Bottom) -->
+        <div class="page z-10 p-12 text-center" id="p5">
+            <h2 class="text-3xl font-extrabold text-slate-900 mt-20">Ready to Automate?</h2>
+            <p class="text-slate-600 mt-6">Let's build your next success story.</p>
+            <a href="https://automation.techgrid-systems.org.uk/contact" class="mt-10 inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-bold">Get In Touch</a>
+        </div>
+        <!-- Page 4 -->
+        <div class="page z-20" id="p4">
+            <h2 class="text-2xl font-bold mb-6 text-indigo-900">04. AI Invoice Processing</h2>
+            <p class="text-slate-700">We deployed AI Builder to parse incoming vendor invoices automatically.</p>
+            <div class="mt-8 bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-500">
+                <h4 class="font-bold text-indigo-900">Result:</h4>
+                <p class="text-indigo-800">95% reduction in manual data entry processing time.</p>
+            </div>
+        </div>
+        <!-- Page 3 -->
+        <div class="page z-30" id="p3">
+            <h2 class="text-2xl font-bold mb-6 text-indigo-900">03. Employee Onboarding</h2>
+            <p class="text-slate-700">Centralized the entire HR lifecycle using Dataverse triggers and automated notification workflows.</p>
+            <div class="mt-8 bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                <h4 class="font-bold text-green-900">Result:</h4>
+                <p class="text-green-800">New hire access provisioned in minutes, not days.</p>
+            </div>
+        </div>
+        <!-- Page 2 -->
+        <div class="page z-40" id="p2">
+            <h2 class="text-2xl font-bold mb-6 text-indigo-900">02. Global Logistics</h2>
+            <p class="text-slate-700">Faced with a 300% surge in order volume, we implemented a custom Power Automate ecosystem bridging legacy ERPs with cloud data.</p>
+            <div class="mt-auto bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                <h4 class="font-bold text-blue-900">Key Outcomes:</h4>
+                <ul class="list-disc list-inside text-blue-800">
+                    <li>300% Scaling Capacity</li>
+                    <li>14hrs saved weekly</li>
+                    <li>Zero manual errors</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Page 1 (Top) -->
+        <div class="page z-50 flex items-center justify-center text-center" id="p1">
+            <div class="border-4 border-slate-900 p-8 w-full h-full flex flex-col items-center justify-center">
+                <span class="text-slate-500 font-bold tracking-widest uppercase">AutomatePro</span>
+                <h2 class="text-5xl font-extrabold text-slate-900 mt-6">PORTFOLIO<br>SHOWCASE</h2>
+                <div class="w-20 h-20 bg-slate-200 rounded-full flex items-center justify-center mt-12">
+                    <span class="text-4xl">🤖</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-full max-w-4xl flex justify-between items-center mt-8 px-4 text-white">
+        <button class="btn-nav" id="prevBtn" onclick="turnPage(-1)">← Previous</button>
+        <span id="pageIndicator" class="font-mono">Page 1 of 5</span>
+        <button class="btn-nav" id="nextBtn" onclick="turnPage(1)">Next →</button>
+    </footer>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 5;
+
+        function turnPage(direction) {
+            if (currentPage + direction < 1 || currentPage + direction > totalPages) return;
+            
+            if (direction > 0) {
+                // Moving forward: Flip the current page
+                const page = document.getElementById(`p${currentPage}`);
+                page.classList.add('flipped');
+                currentPage++;
+            } else {
+                // Moving backward: Unflip the previous page
+                currentPage--;
+                const page = document.getElementById(`p${currentPage}`);
+                page.classList.remove('flipped');
+            }
+            
+            document.getElementById('pageIndicator').innerText = `Page ${currentPage} of ${totalPages}`;
+            updateButtons();
+        }
+
+        function updateButtons() {
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+        }
+        
+        updateButtons();
+    </script>
+</body>
+</html>
