@@ -8,9 +8,8 @@
     <style>body { font-family: 'Inter', sans-serif; }</style>
 </head>
 <body class="bg-slate-50 text-slate-900">
-<!-- Navigation Component -->
+
 <nav class="w-full z-50 sticky top-0 shadow-sm bg-white">
-    <!-- Top Nav: Red angled bar (Hidden on very small screens, responsive on tablets) -->
     <div class="bg-red-700 text-white text-[10px] py-2 overflow-hidden relative">
         <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center sm:justify-end items-center gap-3 sm:gap-6 relative z-10">
             <div class="flex items-center gap-1.5">
@@ -27,85 +26,108 @@
             </div>
         </div>
     </div>
-    
-    <!-- Bottom Nav -->
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="index.html" class="text-lg sm:text-xl font-extrabold text-indigo-700 leading-tight">
-            Techgrid<br class="sm:hidden"> Systems
-        </a>
-        
-        <!-- Desktop Nav -->
+        <a href="index.html" class="text-lg sm:text-xl font-extrabold text-indigo-700 leading-tight">Techgrid<br class="sm:hidden"> Systems</a>
         <div class="hidden md:flex items-center gap-6 font-medium">
             <a href="index.html" class="text-slate-600 hover:text-indigo-600">Home</a>
             <a href="about.html" class="text-slate-600 hover:text-indigo-600">About</a>
-            <a href="services.html" class="text-slate-600 hover:text-indigo-600">Services</a>
-            <a href="portfolio.html" class="text-indigo-600 font-semibold">Portfolio</a>
+            <a href="services.html" class="text-indigo-600 font-semibold">Services</a>
+            <a href="portfolio.html" class="text-slate-600 hover:text-indigo-600">Portfolio</a>
             <a href="contact.html" class="bg-slate-900 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Contact</a>
         </div>
-
-        <!-- Mobile Menu Trigger -->
         <button class="md:hidden p-2 text-slate-700" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
         </button>
     </div>
-
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 flex flex-col gap-4 font-medium">
         <a href="index.html" class="text-slate-600">Home</a>
         <a href="about.html" class="text-slate-600">About</a>
-        <a href="services.html" class="text-slate-600">Services</a>
-        <a href="portfolio.html" class="text-indigo-600 font-semibold">Portfolio</a>
+        <a href="services.html" class="text-indigo-600 font-semibold">Services</a>
+        <a href="portfolio.html" class="text-slate-600">Portfolio</a>
         <a href="contact.html" class="bg-slate-900 text-white px-4 py-2 rounded-lg text-center">Contact</a>
     </div>
 </nav>
-    <main class="max-w-7xl mx-auto px-6 py-20">
-        <h1 class="text-5xl font-extrabold mb-16 text-center text-slate-900">Core Capabilities</h1>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-indigo-100 hover:shadow-xl transition-all">
-                <h3 class="text-xl font-bold mb-4 text-indigo-700">Cloud Workflows</h3>
-                <p class="text-slate-600">End-to-end orchestration of data movement, approval cycles, and cross-platform notifications.</p>
+
+<main class="max-w-7xl mx-auto px-6 py-20">
+    <div class="text-center mb-20">
+        <h1 class="text-5xl font-extrabold mb-6 text-slate-900">Core Capabilities</h1>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">We engineer automated ecosystems that reduce manual overhead and drive business agility.</p>
+    </div>
+
+    <div class="space-y-20">
+        <!-- Power Automate Section -->
+        <section>
+            <h2 class="text-3xl font-bold mb-10 text-indigo-900 border-l-4 border-indigo-600 pl-4">Power Automate Solutions</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 text-indigo-700">New Starter Workflows</h3>
+                    <p class="text-slate-600">We design end-to-end automated provisioning flows. From the moment HR confirms a new hire, our systems automatically create accounts in Microsoft 365, assign appropriate security groups, and trigger personalized welcome emails.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 text-indigo-700">Leaver Process Automation</h3>
+                    <p class="text-slate-600">Securely offboard staff with one-touch automation. Our flows disable 365 accounts, revoke access permissions, and re-route mailboxes in seconds, ensuring your digital perimeter remains secure at all times.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 text-indigo-700">Intelligent Approval Processes</h3>
+                    <p class="text-slate-600">Remove bottlenecks with dynamic approval routing. Whether it's purchase requests or project sign-offs, we build automated approval paths that notify managers instantly, allowing for quick decisions directly from email or Teams.</p>
+                </div>
             </div>
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-indigo-100 hover:shadow-xl transition-all">
-                <h3 class="text-xl font-bold mb-4 text-indigo-700">RPA Integration</h3>
-                <p class="text-slate-600">Bridging the gap between modern cloud services and legacy desktop applications with intelligent RPA.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-indigo-100 hover:shadow-xl transition-all">
-                <h3 class="text-xl font-bold mb-4 text-indigo-700">AI-Powered Automation</h3>
-                <p class="text-slate-600">Leveraging AI Builder to intelligently process documents, sentiment, and decision-making logic.</p>
-            </div>
+        </section>
+
+        <!-- Cloud & AI Sections -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <section class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 class="text-2xl font-bold mb-6 text-indigo-700">Cloud Workflows</h3>
+                <p class="text-slate-600 mb-4">We specialize in building robust, scalable cloud-native workflows that bridge data silos. By connecting your existing software stack, we enable real-time data movement, automated alerts, and seamless multi-platform orchestration.</p>
+                <ul class="text-slate-600 list-disc list-inside space-y-2">
+                    <li>Cross-platform integration (API-led)</li>
+                    <li>Automated cross-platform notifications</li>
+                    <li>Scalable data synchronization</li>
+                </ul>
+            </section>
+            <section class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <h3 class="text-2xl font-bold mb-6 text-indigo-700">AI-Powered Automation</h3>
+                <p class="text-slate-600 mb-4">Leveraging Microsoft AI Builder, we transform unstructured data into actionable insights. We help you automate document processing for invoices, contracts, and sentiment analysis, allowing your team to focus on high-value tasks.</p>
+                <ul class="text-slate-600 list-disc list-inside space-y-2">
+                    <li>Intelligent document extraction</li>
+                    <li>Sentiment & intent analysis</li>
+                    <li>AI-driven business decision logic</li>
+                </ul>
+            </section>
         </div>
-    </main>
+    </div>
+</main>
     
-    <footer class="bg-white border-t border-slate-200 py-16 mt-20">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
-            <div class="col-span-1">
-                <a href="index.html" class="text-2xl font-extrabold text-indigo-700 tracking-tight">Techgrid Systems Automation</a>
-                <p class="text-slate-500 text-sm mt-4">Enterprise workflow solutions for the modern digital business.</p>
-            </div>
-            <div>
-                <h5 class="font-bold text-slate-900 mb-4">Solutions</h5>
-                <ul class="text-slate-600 text-sm space-y-2">
-                    <li><a href="services.html" class="hover:text-indigo-600">Cloud Workflows</a></li>
-                    <li><a href="services.html" class="hover:text-indigo-600">RPA Integration</a></li>
-                    <li><a href="services.html" class="hover:text-indigo-600">AI Automation</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-bold text-slate-900 mb-4">Company</h5>
-                <ul class="text-slate-600 text-sm space-y-2">
-                    <li><a href="about.html" class="hover:text-indigo-600">About Us</a></li>
-                    <li><a href="portfolio.html" class="hover:text-indigo-600">Case Studies</a></li>
-                    <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-bold text-slate-900 mb-4">Connect</h5>
-                <p class="text-slate-500 text-sm">hello@techgrid-systems.org.uk</p>
-            </div>
+<footer class="bg-white border-t border-slate-200 py-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+        <div class="col-span-1">
+            <a href="index.html" class="text-2xl font-extrabold text-indigo-700 tracking-tight">Techgrid Systems Automation</a>
+            <p class="text-slate-500 text-sm mt-4">Enterprise workflow solutions for the modern digital business.</p>
         </div>
-        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-100 text-center text-slate-500 text-sm">
-            &copy; 2026 Techgrid Systems Automation. All rights reserved.
+        <div>
+            <h5 class="font-bold text-slate-900 mb-4">Solutions</h5>
+            <ul class="text-slate-600 text-sm space-y-2">
+                <li><a href="services.html" class="hover:text-indigo-600">Cloud Workflows</a></li>
+                <li><a href="services.html" class="hover:text-indigo-600">RPA Integration</a></li>
+                <li><a href="services.html" class="hover:text-indigo-600">AI Automation</a></li>
+            </ul>
         </div>
-    </footer>
+        <div>
+            <h5 class="font-bold text-slate-900 mb-4">Company</h5>
+            <ul class="text-slate-600 text-sm space-y-2">
+                <li><a href="about.html" class="hover:text-indigo-600">About Us</a></li>
+                <li><a href="portfolio.html" class="hover:text-indigo-600">Case Studies</a></li>
+                <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="font-bold text-slate-900 mb-4">Connect</h5>
+            <p class="text-slate-500 text-sm">hello@techgrid-systems.org.uk</p>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-100 text-center text-slate-500 text-sm">
+        &copy; 2026 Techgrid Systems Automation. All rights reserved.
+    </div>
+</footer>
 </body>
 </html>
