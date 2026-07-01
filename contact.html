@@ -5,7 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Techgrid Systems Automation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>body { font-family: 'Inter', sans-serif; }</style>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    .contact-form {
+        max-width: 500px;
+        margin: 20px 0;
+        font-family: sans-serif;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box; /* Ensures padding doesn't affect width */
+    }
+    .contact-form textarea {
+        height: 100px;
+        resize: vertical;
+    }
+    .contact-form button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .contact-form button:hover {
+        background-color: #0056b3;
+    }
+</style>
 </head>
 <body class="bg-slate-50 text-slate-900">
 <!-- Navigation Component -->
@@ -59,19 +97,32 @@
     </div>
 </nav>
     <main class="max-w-xl mx-auto px-6 py-20">
-        <h1 class="text-4xl font-extrabold mb-8">Let's Automate Your Workflow</h1>
-        <form method="POST" action="https://formsubmit.co/techgrid.systems@gmail.com" enctype="multipart/form-data">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_subject" value="New Contact Submission!">
-            <input type="hidden" name="_autoresponse" value="Dear Sender, Thank you for sending your contact submission. <br> One of our team members will be in contact with you within the next 24 hours. 
-                If you require urgent assistance please contact us by email on techgrid.systems@gmail.com <br> Kind regards, <br> Techgrid Systems Automation <br> Support: techgrid.systems@gmail.com <br> 
-               Location: Greenwich, London, UK | automation.techgrid-systems.org.uk ">
-            <input type="email" name="email" placeholder="Your email">
-            <textarea name="message" placeholder="Details of your problem"></textarea>
-            <input type="file" name="attachment" accept="image/png, image/jpeg">
-            <button type="submit">Send Test</button>
-        </form>
+<div class="contact-form">
+    <h2>Let's Automate Your Workflow</h2>
+    <form method="POST" action="https://formsubmit.co/techgrid.systems@gmail.com" enctype="multipart/form-data">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="New Contact Submission!">
+        <input type="hidden" name="_autoresponse" value="Dear Sender, Thank you for your submission. One of our team members will contact you within 24 hours.">
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="name@example.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">How can we help?</label>
+            <textarea id="message" name="message" placeholder="Details of your problem" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="attachment">Attach Screenshot (optional)</label>
+            <input type="file" id="attachment" name="attachment" accept="image/png, image/jpeg">
+        </div>
+
+        <button type="submit">Submit Request</button>
+    </form>
+</div>
     </main>
     
     <footer class="bg-white border-t border-slate-200 py-16 mt-20">
